@@ -57,4 +57,23 @@ body {
   }
 }
 
+/* For WebKit based browsers */
+::-webkit-scrollbar {
+  width: 10px; /* Width of the scrollbar */
+}
 
+/* Track */
+::-webkit-scrollbar-track {
+  background: transparent; /* Transparent background */
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #5608cd; /* Violet color for the scrollbar */
+  border-radius: 5px; /* Rounded corners for the scrollbar handle */
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #4c1b9a; /* Darker violet color on hover */
+}
