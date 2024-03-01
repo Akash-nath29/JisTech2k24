@@ -28,6 +28,16 @@ const HeroTitle = () => {
       className= {`text-center text-white font-bold ${isMobile && `text-5xl`}`}
       style={{ fontSize: `${!isMobile&&`${textSize}rem`}` }}
     >
+        <div className="absolute top-0 left-0 h-screen w-[95%] -z-10">
+          <Sparkle
+            color={"#FFF"}
+            count={50}
+            minSize={5}
+            maxSize={10}
+            fadeOutSpeed={10}
+            flicker={false}
+          />
+        </div>
       <span>
         JISTECH
         <span className="text-violet-500 shine-animation">2K24</span>
@@ -35,16 +45,6 @@ const HeroTitle = () => {
           <Sparkle color={"#FFF"} count={5} minSize={20} maxSize={30} fadeOutSpeed={10} flicker={false} />
         </div> */}
       </span>
-      <div className="absolute top-0 left-0 h-screen w-[95%] -z-10">
-        <Sparkle
-          color={"#FFF"}
-          count={50}
-          minSize={5}
-          maxSize={10}
-          fadeOutSpeed={10}
-          flicker={false}
-        />
-      </div>
     </span>
   );
 };

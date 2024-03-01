@@ -1,11 +1,12 @@
 import CountdownTimer from "../components/CoutdownTimer";
 import HeroTitle from "../components/HeroTitle";
 import NewButton from "../components/NewButton";
+import PoweredBy from "../components/PoweredBy";
 
 const Hero=()=> {
 
   return (
-    <section className="h-[75vh] w-full flex items-center justify-center flex-col">
+    <section className="h-[75vh] w-full flex items-center justify-center flex-col text-center select-none">
       <div className="mb-10">
         {/* <SparklingText /> */}
         {/* <span className="text-center text-white font-bold text-8xl">
@@ -15,6 +16,7 @@ const Hero=()=> {
           </span>
         </span> */}
         <HeroTitle/>
+        <PoweredBy/>
         <div className="mt-10">
           <CountdownTimer />
         </div>
