@@ -233,3 +233,28 @@ button svg {
 	inline-size: 1.25em;
 	translate: -25% -5%;
 }
+
+@media (orientation: portrait) {
+	button:before {
+	  opacity: 0; /* Disable backdrop */
+	}
+  
+	.particle-pen {
+	  opacity: 0; /* Disable particle pen */
+	}
+  
+	.particle {
+	  animation-play-state: paused; /* Pause particle animation */
+	}
+  
+	button:is(:hover, :focus-visible) ~ :is(.bodydrop, .particle-pen) {
+	  --active: 0; /* Disable hover animation */
+	  --play-state: paused; /* Pause animation */
+	}
+  
+	button:is(:hover, :focus-visible) {
+	  --active: 0; /* Disable hover animation */
+	  --play-state: paused; /* Pause animation */
+	}
+  }
+  
