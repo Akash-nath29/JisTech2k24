@@ -1,10 +1,12 @@
 import NewButton from "../components/NewButton";
+import SparklingText from "../components/SparklingText";
 
 function Hero() {
   return (
     <section className="h-[75vh] w-full flex items-center justify-center flex-col">
       <div className="mb-10">
-        <span className="text-center text-white font-bold text-8xl">JISTECH 2k24</span>
+        <SparklingText/>
+        <span className="text-center text-white font-bold text-8xl"></span>
       </div>
         <NewButton buttonText="View More"/>
     </section>

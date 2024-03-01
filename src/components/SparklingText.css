@@ -1,0 +1,42 @@
+.sparkling-text-container {
+    position: relative;
+    display: inline-block;
+  }
+  
+  .sparkles {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+  }
+  
+  .sparkleText {
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    animation: sparkleAnimation 2s ease infinite alternate;
+  }
+  
+  @keyframes sparkleAnimation {
+    0% {
+      opacity: 0;
+      transform: scale(0);
+    }
+    50% {
+      opacity: 1;
+      transform: scale(2);
+    }
+    100% {
+      opacity: 0;
+      transform: scale(0);
+    }
+  }
+  
+  
+  .text {
+    font-size: 24px;
+    font-weight: bold;
+    color: #ffffff;
+  }
+  
