@@ -60,7 +60,13 @@ const SparklingText: React.FC = () => {
   return (
     <div className="sparkling-text-container">
       <div className="sparkles">{sparkles}</div>
-      <div className="text text-8xl">JISTECH2K24</div>
+      <div className="text text-8xl">
+        <span>
+
+        JISTECH
+        <span className=" text-violet-500">2K24</span>
+        </span>
+        </div>
     </div>
   );
 };
