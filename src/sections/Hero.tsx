@@ -1,7 +1,7 @@
-import CountdownTimer from "../components/CoutdownTimer";
-import HeroTitle from "../components/HeroTitle";
+import CountdownTimer from "../components/Hero/CoutdownTimer";
+import HeroTitle from "../components/Hero/HeroTitle";
 import NewButton from "../components/NewButton";
-import PoweredBy from "../components/PoweredBy";
+import PoweredBy from "../components/Hero/PoweredBy";
 
 const Hero=()=> {
 
