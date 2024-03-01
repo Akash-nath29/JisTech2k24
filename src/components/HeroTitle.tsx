@@ -2,6 +2,7 @@
 import { useState, useEffect } from "react";
 import Sparkle from "react-sparkle";
 import { isMobile } from "react-device-detect";
+import './ShineAnimation.css';
 
 const HeroTitle = () => {
   const [textSize, setTextSize] = useState(8); // Initial text size
@@ -29,7 +30,7 @@ const HeroTitle = () => {
     >
       <span>
         JISTECH
-        <span className="text-violet-500">2K24</span>
+        <span className="text-violet-500 shine-animation">2K24</span>
         {/* <div className="absolute h-[6rem] w-[40rem] -z-10 flex items-center content-center justify-center -mt-24 -ml-4">
           <Sparkle color={"#FFF"} count={5} minSize={20} maxSize={30} fadeOutSpeed={10} flicker={false} />
         </div> */}
