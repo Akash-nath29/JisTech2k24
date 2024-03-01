@@ -6,7 +6,7 @@ import PoweredBy from "../components/Hero/PoweredBy";
 const Hero=()=> {
 
   return (
-    <section className="h-[75vh] w-full flex items-center justify-center flex-col text-center select-none">
+    <section className="h-[85vh] w-full flex items-center justify-center flex-col text-center select-none">
       <div className="mb-10">
         {/* <SparklingText /> */}
         {/* <span className="text-center text-white font-bold text-8xl">
