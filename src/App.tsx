@@ -1,6 +1,15 @@
+import Hero from "./sections/Hero"
+
 function App() {
   return (
-    <section>App</section>
+    <>
+    <Hero/>
+    <Hero/>
+    <Hero/>
+    <Hero/>
+    <Hero/>
+    
+    </>
   )
 }
 
