@@ -24,7 +24,7 @@ const SparklingText: React.FC = () => {
           };
       const style = {
         ...positionStyle,
-        // animationDelay: `-${randomInRange(0, 1000)}ms`,
+        // animationDelay: `-${randomInRange(0, 10)}ms`,
       };
       return (
         <img
@@ -52,7 +52,7 @@ const SparklingText: React.FC = () => {
     // Set interval to generate sparkles every second
     const interval = setInterval(() => {
       generateSparkles();
-    }, 1000);
+    }, 3000);
 
     // Clean up interval on component unmount
     return () => clearInterval(interval);
