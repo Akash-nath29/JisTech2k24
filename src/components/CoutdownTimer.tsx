@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-unused-vars */
 /* eslint-disable @typescript-eslint/no-explicit-any */
 import { useState, useEffect } from "react";
 import "./countdown.css";
@@ -45,40 +46,40 @@ const CountdownTimer = () => {
     return () => clearTimeout(timer);
   }, [timeLeft]);
 
-//   const countdownStyle = {
-//     display: "flex",
-//     justifyContent: "center",
-//     listStyle: "none",
-//     padding: 0,
-//     flexDirection: isMobile ? "column" : "row",
-//     gap: isMobile ? "" : "4rem",
-//   };
+  const countdownStyle:any = {
+    display: "flex",
+    justifyContent: "center",
+    listStyle: "none",
+    padding: 0,
+    flexDirection: isMobile ? "column" : "row",
+    gap: isMobile ? "" : "4rem",
+  };
 
-//   const countdownItemStyle = {
-//     textAlign: "center",
-//     margin: isMobile ? "10px 0" : "",
-//   };
+  const countdownItemStyle:any = {
+    textAlign: "center",
+    margin: isMobile ? "10px 0" : "",
+  };
 
   return (
     <section className="countdownSection">
       <ul
         id="countdown"
-        // style={countdownStyle}
-        className={`flex justify-center content-center list-none p-0 ${
-          isMobile ? `flex-col gap-0` : `flex-row gap-16`
-        }`}
+        style={countdownStyle}
+        // className={`flex justify-center content-center list-none p-0 ${
+        //   isMobile ? `flex-col gap-0` : `flex-row gap-16`
+        // }`}
       >
         <div style={{ display: "flex", flexDirection: "row", gap: "4rem" }}>
           <li 
-        //   style={countdownItemStyle}
-        className={`text-center ${isMobile? `mx-4`:`p-0`}`}
+          style={countdownItemStyle}
+        // className={`text-center ${isMobile? `mx-4`:`p-0`}`}
           >
             <span className="days timenumbers">{timeLeft.days}</span>
             <p className="timeRefDays timedescription">days</p>
           </li>
           <li 
-        //   style={countdownItemStyle}
-        className={`text-center ${isMobile? `mx-4`:`p-0`}`}
+          style={countdownItemStyle}
+        // className={`text-center ${isMobile? `mx-4`:`p-0`}`}
           >
             <span className="hours timenumbers">{timeLeft.hours}</span>
             <p className="timeRefHours timedescription">hours</p>
@@ -86,15 +87,15 @@ const CountdownTimer = () => {
         </div>
         <div style={{ display: "flex", flexDirection: "row", gap: "4rem" }}>
           <li 
-        //   style={countdownItemStyle}
-        className={`text-center ${isMobile? `mx-4`:`p-0`}`}
+          style={countdownItemStyle}
+        // className={`text-center ${isMobile? `mx-4`:`p-0`}`}
           >
             <span className="minutes timenumbers">{timeLeft.minutes}</span>
             <p className="timeRefMinutes timedescription">minutes</p>
           </li>
           <li 
-        //   style={countdownItemStyle}
-        className={`text-center ${isMobile? `mx-4`:`p-0`}`}
+          style={countdownItemStyle}
+        // className={`text-center ${isMobile? `mx-4`:`p-0`}`}
           >
             <span className="seconds timenumbers yellow-text">
               {timeLeft.seconds}

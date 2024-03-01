@@ -8,4 +8,52 @@ body {
   background-color: #000000;
   background-image: url('bg.svg');
   background-repeat:no-repeat;
+  margin: 0;
+  padding: 0;
 }
+
+
+.skeleton-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 20px;
+}
+
+.skeleton-card {
+  background-color: #0a0c13;
+  padding: 15px;
+  border-radius: 0.875rem;
+  animation: shimmer 1s infinite linear;
+  overflow: hidden; /* Ensure the shimmer gradient doesn't overflow */
+  position: relative; /* Create a stacking context for child elements */
+  height: 220px;
+  margin: -10px
+}
+
+.skeleton-gradient {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to right, #0a0c13, #12161f, #0a0c13);
+  transform: translateX(-100%); /* Initial position outside the card */
+  animation: shimmerGradient 1s infinite linear;
+}
+
+@keyframes shimmer {
+  0% {
+    background-position: -1000px 0;
+  }
+  100% {
+    background-position: 1000px 0;
+  }
+}
+
+@keyframes shimmerGradient {
+  0% {
+    transform: translateX(-100%);
+  }
+  100% {
+    transform: translateX(100%);
+  }
+}
+
+

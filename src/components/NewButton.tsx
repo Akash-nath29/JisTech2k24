@@ -1,14 +1,45 @@
 import "./buttonComponent.css";
-
+import { isMobile } from "react-device-detect";
 interface Props {
   buttonText: string;
 }
 
-const NewButton = ({buttonText}:Props) => {
-  
+const NewButton = ({ buttonText }: Props) => {
+  const scrollToContent = () => {
+    const contentSection = document.getElementById("content");
+    if (contentSection) {
+      if (isMobile) {
+        window.scrollTo({
+          top: contentSection.offsetTop,
+          behavior: "smooth",
+        });
+      } else {
+        const contentOffsetTop = contentSection.offsetTop;
+        const duration = 800; // Duration in milliseconds
+        const startTime = performance.now();
+
+        const easeInOutQuad = (t: number) =>
+          t < 0.5 ? 2 * t * t : -1 + (4 - 2 * t) * t;
+
+        const scroll = (currentTime: number) => {
+          const elapsedTime = currentTime - startTime;
+          const progress = Math.min(elapsedTime / duration, 1);
+          const easedProgress = easeInOutQuad(progress);
+          window.scrollTo(0, contentOffsetTop * easedProgress);
+
+          if (progress < 1) {
+            requestAnimationFrame(scroll);
+          }
+        };
+
+        requestAnimationFrame(scroll);
+      }
+    }
+  };
+
   return (
     <div className="sparkle-button">
-      <button className="px-6 py-3">
+      <button className="px-6 py-3" onClick={scrollToContent}>
         <span className="spark"></span>
         <span className="backdrop"></span>
         <svg
@@ -326,6 +357,6 @@ const NewButton = ({buttonText}:Props) => {
       </span>
     </div>
   );
-}
+};
 
 export default NewButton;
