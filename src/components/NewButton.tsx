@@ -1,3 +1,4 @@
+import { useEffect, useState } from "react";
 import "./buttonComponent.css";
 import { isMobile } from "react-device-detect";
 interface Props {
@@ -5,6 +6,17 @@ interface Props {
 }
 
 const NewButton = ({ buttonText }: Props) => {
+  const [buttonKey, setButtonKey] = useState(0);
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setButtonKey((prevKey) => prevKey + 1);
+    }, 5000);
+
+    return () => clearInterval(interval);
+  }, []);
+
+
   const scrollToContent = () => {
     const contentSection = document.getElementById("content");
     if (contentSection) {
@@ -38,7 +50,7 @@ const NewButton = ({ buttonText }: Props) => {
   };
 
   return (
-    <div className="sparkle-button">
+    <div className="sparkle-button" key={buttonKey}>
       <button className="px-6 py-3" onClick={scrollToContent}>
         <span className="spark"></span>
 
