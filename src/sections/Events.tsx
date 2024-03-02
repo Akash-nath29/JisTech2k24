@@ -40,7 +40,7 @@ const Events = () => {
             </span>
           </button> */}
         </BackgroundGradient>
-        <BackgroundGradient className="rounded-[22px] max-w-md p-4 sm:p-10 bg-white dark:bg-zinc-900">
+        <BackgroundGradient className="rounded-[22px] max-w-full max-h-full min-h-full min-w-full  p-4 sm:p-10 bg-zinc-900">
           <p className="text-base sm:text-xl mt-4 mb-2 text-neutral-200">
             Lorem ipsum dolor, sit amet consectetur adipisicing elit. Nisi,
             esse. Aut
@@ -58,7 +58,7 @@ const Events = () => {
             </span>
           </button> */}
         </BackgroundGradient>
-        <BackgroundGradient className="rounded-[22px] max-w-md p-4 sm:p-10 bg-white dark:bg-zinc-900">
+        <BackgroundGradient className="rounded-[22px] max-w-full max-h-full min-h-full min-w-full  p-4 sm:p-10 bg-zinc-900">
           <p className="text-base sm:text-xl mt-4 mb-2 text-neutral-200">
             Lorem ipsum dolor, sit amet consectetur adipisicing elit. Nisi,
             esse. Aut
