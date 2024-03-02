@@ -22,7 +22,7 @@ const Events = () => {
             </div>
           </CardSpotlightEffect>
         ))} */}
-        <BackgroundGradient className="rounded-[22px] max-w-md min-h-[250px] p-4 sm:p-10 bg-zinc-900">
+        <BackgroundGradient className="rounded-[22px] max-w-full max-h-full min-h-full min-w-full  p-4 sm:p-10 bg-zinc-900">
           <p className="text-base sm:text-xl mt-4 mb-2 text-neutral-200">
             Lorem ipsum dolor, sit amet consectetur adipisicing elit. Nisi,
             esse. Aut
