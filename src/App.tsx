@@ -1,21 +1,21 @@
-import { useState, useEffect } from "react";
+// import { useState, useEffect } from "react";
 import Hero from "./sections/Hero";
 import RemainingPart from "./sections/remainingPart";
 
 function App() {
-  const [heroKey, setHeroKey] = useState(0);
+  // const [heroKey, setHeroKey] = useState(0);
 
-  useEffect(() => {
-    const interval = setInterval(() => {
-      setHeroKey((prevKey) => prevKey + 1);
-    }, 5000);
+  // useEffect(() => {
+  //   const interval = setInterval(() => {
+  //     setHeroKey((prevKey) => prevKey + 1);
+  //   }, 5000);
 
-    return () => clearInterval(interval);
-  }, []);
+  //   return () => clearInterval(interval);
+  // }, []);
 
   return (
     <>
-      <Hero key={heroKey} />
+      <Hero />
       <RemainingPart />
     </>
   );
