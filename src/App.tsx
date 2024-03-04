@@ -1,7 +1,7 @@
 // import { useState, useEffect } from "react";
 import Hero from "./sections/Hero";
 import RemainingPart from "./sections/remainingPart";
-import Timeline from "./sections/Timeline";
+
 import Footer from "./sections/Footer";
 function App() {
   // const [heroKey, setHeroKey] = useState(0);
@@ -18,7 +18,7 @@ function App() {
     <>
       <Hero />
       <RemainingPart />
-      <Timeline/>
+      
       <Footer />
     </>
   );
