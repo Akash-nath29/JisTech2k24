@@ -1,133 +1,114 @@
+/* eslint-disable react-refresh/only-export-components */
+/* eslint-disable @typescript-eslint/no-explicit-any */
+import {
+  VerticalTimeline,
+  VerticalTimelineElement,
+} from "react-vertical-timeline-component";
+import "react-vertical-timeline-component/style.min.css";
+import { eventTimelineDetails } from "../events";
+import { FaClock } from "react-icons/fa";
+import { useState } from "react";
+import { motion } from "framer-motion";
 
-import { VerticalTimeline, VerticalTimelineElement }  from 'react-vertical-timeline-component';
-import 'react-vertical-timeline-component/style.min.css';
-import LaptopIcon from '@mui/icons-material/Laptop';
-import AccessAlarmIcon from '@mui/icons-material/AccessAlarm';
-import SportsEsportsIcon from '@mui/icons-material/SportsEsports';
-import SmartToyIcon from '@mui/icons-material/SmartToy';
-import StarIcon from '@mui/icons-material/Star';
-import '../components/Hero/ShineAnimation.css';
 
-const timeline = () => {
+
+const EventCard = (event:any) => {
+    const [expanded, setExpanded] = useState(false);
+  
+    const toggleExpand = () => {
+      setExpanded(!expanded);
+    };
+  
+    const containerVariants = {
+      collapsed: {
+        height: 0,
+        opacity: 0,
+        transition: {
+          duration: 0.3,
+          ease: "easeOut",
+        },
+      },
+      expanded: {
+        height: "auto",
+        opacity: 1,
+        transition: {
+          duration: 0.3,
+          ease: "easeIn",
+        },
+      },
+    };
+  
+    return (
+      <VerticalTimelineElement
+        contentStyle={{
+          background: "#1d1836",
+          color: "#fff",
+        }}
+        contentArrowStyle={{ borderRight: "7px solid  #232631" }}
+        date={event.date}
+        iconStyle={{ background: "white" }}
+        icon={
+          <span className=" text-violet-700 ">
+            <FaClock />
+          </span>
+        }
+      >
+        <div>
+          <h3 className="text-[24px] font-bold text-white">{event.title}</h3>
+          <p
+            className="text-secondary text-[16px] font-semibold"
+            style={{ margin: 0 }}
+          >
+            {event.desc}
+          </p>
+        </div>
+  
+        <motion.div
+          className="ml-5 mt-5 space-y-2"
+          variants={containerVariants}
+          initial="collapsed"
+          animate={expanded ? "expanded" : "collapsed"}
+        >
+          {(expanded ? event.events : event.events.slice(0, 3)).map(
+            (e:any, index:any) => (
+              <div
+                key={`event-event-${index}`}
+                className="text-white-100 pl-1 text-[14px] tracking-wider"
+              >
+                <span className="px-2 py-1 bg-slate-800 text-white">
+                  {e.time}
+                </span>
+                {" - "}
+                {e.event}
+              </div>
+            )
+          )}
+        </motion.div>
+  
+        {event.events.length > 3 && (
+          <button className="text-white mt-4 px-3 py-2" onClick={toggleExpand}>
+            {expanded ? "Hide" : "View Detailed"}
+          </button>
+        )}
+      </VerticalTimelineElement>
+    );
+  };
+
+
+
+
+
+const eventTimeline = () => {
   return (
-    <div className='text-violet-400 shine-animation-for-timeline'>
-    <h1 className="text-4xl text-white text-center mb-10 ">Timeline</h1>
-    <VerticalTimeline>
-        
-  <VerticalTimelineElement
-    className="vertical-timeline-element--work"
-    contentStyle={{ background: '#5608cd', color: '#fff' }}
-    contentArrowStyle={{ borderRight: '7px solid  #5608cd' }}
-    date="7th September 2024"
-    iconStyle={{ background: '#5608cd', color: '#fff' }}
-    icon={<LaptopIcon />}
-    
+    <section id="eventTimeline" className="poppins-regular mt-20"> 
+        <h1 className="text-7xl portrait:text-5xl font-bold text-white mb-8">Event Timeline</h1>
+        <VerticalTimeline>
+          {eventTimelineDetails.map((event, index) => (
+            <EventCard key={index} {...event} />
+          ))}
+        </VerticalTimeline>
+    </section>
+  );
+};
 
-    
-  >
-    <h1 className="vertical-timeline-element-title">10am</h1>
-    
-    <p>
-      Hackathon Starts
-    </p>
-  </VerticalTimelineElement>
-  <VerticalTimelineElement
-    className="vertical-timeline-element--work"
-    contentStyle={{ background: '#5608cd', color: '#fff' }}
-    contentArrowStyle={{ borderRight: '7px solid  #5608cd' }}
-    
-    date="8th September 2024"
-    iconStyle={{ background: '#5608cd', color: '#fff' }}
-    icon={<AccessAlarmIcon />}
-  >
-    <h3 className="vertical-timeline-element-title">3pm</h3>
-    
-    <p>
-      Hackathon Ends
-    </p>
-  </VerticalTimelineElement>
-  <VerticalTimelineElement
-    className="vertical-timeline-element--work"
-    date="9th September 2024"
-    iconStyle={{ background: '#5608cd', color: '#fff' }}
-    contentStyle={{ background: '#5608cd', color: '#fff' }}
-    contentArrowStyle={{ borderRight: '7px solid  #5608cd' }}
-    icon={<SmartToyIcon />}
-
-  >
-    <h3 className="vertical-timeline-element-title">10 am</h3>
-    
-    <p>
-      JIStech event 1
-    </p>
-  </VerticalTimelineElement>
-
-
-<VerticalTimelineElement
-    className="vertical-timeline-element--work"
-    date="9th September 2024"
-    iconStyle={{ background: '#5608cd', color: '#fff' }}
-    contentStyle={{ background: '#5608cd', color: '#fff' }}
-    contentArrowStyle={{ borderRight: '7px solid  #5608cd' }}
-    icon={<SportsEsportsIcon />}
-    // Use the imported WorkIcon component
->
-    <h3 className="vertical-timeline-element-title">2pm</h3>
-    
-    <p>
-        JIStech event 2
-    </p>
-</VerticalTimelineElement>
-  <VerticalTimelineElement
-    className="vertical-timeline-element--education"
-    date="10th September 2024"
-    iconStyle={{ background: '#5608cd', color: '#fff' }}
-    contentStyle={{ background: '#5608cd', color: '#fff' }}
-    contentArrowStyle={{ borderRight: '7px solid  #5608cd' }}
-    icon={<SportsEsportsIcon />}
-  >
-    <h3 className="vertical-timeline-element-title">10 am</h3>
-    
-    <p>
-      JIStech event 3
-    </p>
-  </VerticalTimelineElement>
-  <VerticalTimelineElement
-    className="vertical-timeline-element--education"
-    date="11th September 2024"
-    iconStyle={{ background: '#5608cd', color: '#fff' }}
-    contentStyle={{ background: '#5608cd', color: '#fff' }}
-    contentArrowStyle={{ borderRight: '7px solid  #5608cd' }}
-    icon={<SportsEsportsIcon />}
-  >
-    <h3 className="vertical-timeline-element-title">10 am</h3>
-    
-    <p>
-      JIStech event 4
-    </p>
-  </VerticalTimelineElement>
-  <VerticalTimelineElement
-    className="vertical-timeline-element--education"
-    date="12th September 2024"
-    iconStyle={{ background: '#5608cd', color: '#fff' }}
-    contentStyle={{ background: '#5608cd', color: '#fff' }}
-    contentArrowStyle={{ borderRight: '7px solid  #5608cd' }}
-    icon={<SportsEsportsIcon />}
-  >
-    <h3 className="vertical-timeline-element-title">10 am</h3>
-    
-    <p>
-      JIStech event 5
-    </p>
-  </VerticalTimelineElement>
-  <VerticalTimelineElement
-    iconStyle={{ background: '#5608cd', color: '#fff' }}
-    icon={<StarIcon />}
-    
-  />
-</VerticalTimeline>
-</div>
-  )
-}
-
-export default timeline
+export default eventTimeline;
