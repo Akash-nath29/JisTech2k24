@@ -17,7 +17,6 @@ function App() {
     <>
       <Hero />
       <RemainingPart />
-      <Timeline/>
     </>
   );
 }
